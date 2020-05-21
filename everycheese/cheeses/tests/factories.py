@@ -1,10 +1,15 @@
 from django.template.defaultfilters import slugify
-
+import pytest
 import factory
 import factory.fuzzy
 
 from ..models import Cheese
 from ...users.tests.factories import UserFactory
+
+
+@pytest.fixture
+def cheese():
+    return CheeseFactory()
 
 
 class CheeseFactory(factory.django.DjangoModelFactory):
