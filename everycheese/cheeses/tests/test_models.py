@@ -13,3 +13,13 @@ def test___str__():
     # Then
     assert cheese.__str__() == cheese.name
     assert str(cheese) == cheese.name
+
+def test_get_absolute_url():
+    # Given
+    cheese = CheeseFactory()
+
+    # When
+    url = cheese.get_absolute_url()
+
+    # Then
+    assert url == f'/cheeses/{cheese.slug}/'
